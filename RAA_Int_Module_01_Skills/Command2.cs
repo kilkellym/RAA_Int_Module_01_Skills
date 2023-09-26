@@ -69,10 +69,8 @@ namespace RAA_Int_Module_01_Skills
                 .FirstOrDefault(curViewScheduleInDoc => curViewScheduleInDoc.Name == "Room Finish Schedule");
 
                 var roomInstance = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Rooms)
-
-                                                        .WhereElementIsNotElementType()
-
-                                                             .FirstOrDefault();
+                .WhereElementIsNotElementType()
+                .FirstOrDefault();
 
                 // Get Area fiel
                 List<ScheduleFieldId> fieldList = RoomSchedule.Definition.GetFieldOrder().ToList();
@@ -88,10 +86,8 @@ namespace RAA_Int_Module_01_Skills
                     }
                 }
                 
-               
                 t.Commit();
             }
-
 
             return Result.Succeeded;
         }
